@@ -11,16 +11,12 @@ morseTree::~morseTree() {
 
 }
 
-void morseTree::encode(string word) { // endcode letters to morse code O(n)
-	
+void morseTree::encode(string word) { // endcode letters to morse code O(n)	
 	cout << "Encoded String: " << endl; // better formatting
-	
 	for(int i = 0; i < word.length(); i++) // loop for the length of the string to be encoded
 	{
-		node* currentNode = root; // reset to root every time a new letter is selected
-		
-		char letter = word[i]; // get current letter to be encoded
-		
+		node* currentNode = root; // reset to root every time a new letter is selected	
+		char letter = word[i]; // get current letter to be encoded	
 		receiveCode(currentNode->left , letter); // search left side of tree for letter
 		receiveCode(currentNode->right, letter); //search right side of tree for letter
 	}
@@ -33,18 +29,13 @@ void morseTree::receiveCode(node* currentNode, char letter) // searches through 
 	{
 		return;
 	}
-	
 	if(currentNode->data == letter) { // print morsecode if letter node is found
 		cout << currentNode->code;	
 	}
-	
-	else {
-		
+		else {
 		receiveCode(currentNode->left, letter) // recursively search the left subtree
 		receiveCode(currentNode->right, letter) // recursively search the right subtree
 	}
-	
-	
 } // end of the receiveCode function
 	
 	
