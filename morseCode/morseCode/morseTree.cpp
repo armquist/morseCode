@@ -3,11 +3,11 @@
 
 using namespace std;
 
-morseTree::morseTree() {
-	root = new node();
+morseTree::morseTree() { //constructor
+	root = new node();   //establish root node (Should be NULL)
 }
 
-morseTree::~morseTree() {
+morseTree::~morseTree() { //destructor
 
 }
 
